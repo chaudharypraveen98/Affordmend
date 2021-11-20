@@ -14,4 +14,17 @@ def compress(string):
         res += str(count)
     return res
     
-compress("praaaavvvv")
+def decompress(string):
+    res=""
+    i=0
+    while i<len(string)-1:
+        if string[i+1].isnumeric():
+            next_num = int(string[i+1])
+            res+=string[i]*next_num
+            i+=2
+        else:
+            res+=string[i]
+            i+=1
+    print(res)
+compress_string = compress("praaaavvvv")
+decompress(compress_string)
